@@ -163,7 +163,50 @@ Application is clean. But it doesn't mean we caught all the issues. Let me elabo
 
 Let see next how we can do better when we have access to the source code.
 
-# Example #3: Being proactive and scanning as soon we can compile our code
+
+# Example #3: Being proactive and scanning Covid19Informer as soon we can compile our code
+
+In order to use it as part of our continuous integration we add it into the build.gradle.kts
+
+```kotlin
+plugins {
+    `java-library`
+    application
+    id("org.owasp.dependencycheck") version "6.5.3"
+}
+```
+
+The using it is just matter of calling gradle like this:
+```shell
+[josevnz@dmaf5 Covid19Informer]$ gradle dependencyCheckAnalyze --info
+...
+One or more dependencies were identified with known vulnerabilities in Covid19Informer:
+
+h2-1.4.199.jar (pkg:maven/com.h2database/h2@1.4.199, cpe:2.3:a:h2database:h2:1.4.199:*:*:*:*:*:*:*) : CVE-2021-23463, CVE-2021-42392
+
+
+See the dependency-check report for more details.
+
+
+Element event queue destroyed: org.apache.commons.jcs.engine.control.event.ElementEventQueue@12440215
+In DISPOSE, [NODEAUDIT] fromRemote [false]
+In DISPOSE, [NODEAUDIT] auxiliary [NODEAUDIT]
+...
+BUILD SUCCESSFUL in 4s
+2 actionable tasks: 2 executed
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.
+Watching 24 directories to track changes
+
+```
+
+A few things note:
+* The build went through but there was a warning: A vulnerable jar was found in my gradle cache (File Path: /home/josevnz/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.199/7bf08152984ed8859740ae3f97fae6c72771ae45/h2-1.4.199.jar). 
+It is there from a previous test I did, so just keep this in mind if you run into some false positives when using this tool.
+* This gradle scanner downloads a lot of data the first time. After that it stabilizes using the local cache content.
+
+For that reason, let me show you another different Gradle plugin that can also be used to scan for vulnerabilities.
+
+# Example #4: Using a different tool to scan Covid19Informer as soon is compiled
 
 The folks from Sonatype created a Gradle plugin you can use to scan your project called [scan-gradle-plugin](https://github.com/sonatype-nexus-community/scan-gradle-plugin/#readme), which is baked by their [OSS Index catalog](https://ossindex.sonatype.org/)
 
