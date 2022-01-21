@@ -1,0 +1,14 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Do not pack this manually created directories
+standalone
+byhand
+jars
+# Ignore IntelliJ settings
+.idea/*
+# Ignore IntelliJ build directory
+**/out
