@@ -81,7 +81,7 @@ Dependency-Check is an open source tool performing a best effort analysis of 3rd
 [INFO] Writing report to: /home/josevnz/Downloads/./dependency-check-report.html
 ```
 
-![Scan results for XXXX](https://github.com/josevnz/Covid19Informer/raw/main/owasp_scan.png)
+![Scan results for XXXX](https://github.com/josevnz/Covid19Informer/raw/main/tutorial/owasp_scan.png)
 
 The report shows than the version I choose has several issues; The vendor fixed all of them on the latest release.
 
