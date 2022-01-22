@@ -31,7 +31,7 @@ repositories {
 
 dependencies {
     implementation("commons-cli:commons-cli:1.5.0")
-    implementation("org.owasp:dependency-check-gradle:6.5.3")
+    // implementation("org.owasp:dependency-check-gradle:6.5.3")
     testImplementation("junit:junit:4.13.2")
 }
 
