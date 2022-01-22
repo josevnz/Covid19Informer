@@ -2,7 +2,7 @@ plugins {
     `java-library`
     id ("org.sonatype.gradle.plugins.scan") version "2.2.2"
     application
-    // id("org.owasp.dependencycheck") version "6.5.3"
+    id("org.owasp.dependencycheck") version "6.5.3"
 }
 
 ossIndexAudit {
@@ -31,7 +31,6 @@ repositories {
 
 dependencies {
     implementation("commons-cli:commons-cli:1.5.0")
-    // implementation("org.owasp:dependency-check-gradle:6.5.3")
     testImplementation("junit:junit:4.13.2")
 }
 
