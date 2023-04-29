@@ -96,7 +96,7 @@ This project downloads the COVID-19 statistics from the state of CT government p
 Download snd compile with [Gradle](https://docs.gradle.org/current/userguide/userguide.html):
 
 ```shell
-[josevnz@dmaf5 Covid19Informer]$ git clone https://github.com/jeremylong/Covid19Informer.git
+[josevnz@dmaf5 Covid19Informer]$ git clone https://github.com/josevnz/Covid19Informer.git
 [josevnz@dmaf5 Covid19Informer]$ gradle test jar 
 [josevnz@dmaf5 Covid19Informer]$ gradle distTar
 [josevnz@dmaf5 Covid19Informer]$ /bin/tar --directory $HOME --extract --verbose --file build/distributions/Covid19Informer-0.0.1.tar
