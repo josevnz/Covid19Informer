@@ -33,3 +33,6 @@ gradle clean test jar distTar
 ```shell
 /bin/tar --directory $HOME --extract --verbose --file build/distributions/Covid19Informer-*.tar 
 ```
+## Don't miss the tutorial that comes with the code
+
+[Scannin your code for third party vulnerabilities](tutorial/Scanning%20your%20Java%20code%20for%20third%20party%20vulnerabilities.md)
