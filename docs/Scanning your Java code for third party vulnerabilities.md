@@ -1,5 +1,7 @@
 # Scanning your Java code for third party vulnerabilities
 
+![](mazinger-z.png)
+
 In a previous article I showed you how to detect third party vulnerabilities in Python. In this article I will show you how you can scan your Java code for the same issue.
 
 # Example #1: Scanning the libraries of a well known Open Source project

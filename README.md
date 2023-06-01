@@ -1,5 +1,7 @@
 # COVID-19 informer
 
+![](mazinger-z.png)
+
 This small program downloads town COVID-19 information made available on the CT Data Portal, and parses it to display information of interest.
 
 * https://data.ct.gov/stories/s/COVID-19-data/wa3g-tfvc/
